@@ -1,0 +1,16 @@
+{
+  "siteName": "Goodwill Training Array",
+  "location": "Albuquerque, NM",
+  "arraySizeKw": 6.4,
+  "status": "Normal",
+  "weather": "Clear sky",
+  "lastUpdated": "2 minutes ago",
+  "forecastTotalKwh": 32.5,
+  "weeklyAverageKwh": 30.3,
+  "bestDayLabel": "Friday",
+  "bestDayKwh": 33.2,
+  "activeAlerts": 3,
+  "currentOutputKw": 5.8,
+  "systemEfficiency": 94.6,
+  "carbonAvoidedLbs": 41
+}

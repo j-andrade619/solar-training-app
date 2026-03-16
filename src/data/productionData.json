@@ -1,0 +1,44 @@
+[
+  {
+    "day": "Mon",
+    "date": "Mar 10",
+    "kwh": 28.4,
+    "targetKwh": 27
+  },
+  {
+    "day": "Tue",
+    "date": "Mar 11",
+    "kwh": 30.1,
+    "targetKwh": 27
+  },
+  {
+    "day": "Wed",
+    "date": "Mar 12",
+    "kwh": 26.8,
+    "targetKwh": 27
+  },
+  {
+    "day": "Thu",
+    "date": "Mar 13",
+    "kwh": 31.6,
+    "targetKwh": 27
+  },
+  {
+    "day": "Fri",
+    "date": "Mar 14",
+    "kwh": 33.2,
+    "targetKwh": 27
+  },
+  {
+    "day": "Sat",
+    "date": "Mar 15",
+    "kwh": 29.7,
+    "targetKwh": 27
+  },
+  {
+    "day": "Sun",
+    "date": "Mar 16",
+    "kwh": 32.5,
+    "targetKwh": 27
+  }
+]

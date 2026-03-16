@@ -1,29 +1,41 @@
+import productionData from '../../data/productionData.json'
+import liveStatus from '../../data/liveStatus.json'
+
+const totalProduction = productionData.reduce((sum, day) => sum + day.kwh, 0)
+const latestDay = productionData[productionData.length - 1]
+const previousDay = productionData[productionData.length - 2]
+const productionDelta = latestDay.kwh - previousDay.kwh
+const productionDeltaLabel =
+  productionDelta >= 0
+    ? `+${productionDelta.toFixed(1)} kWh vs ${previousDay.day}`
+    : `${productionDelta.toFixed(1)} kWh vs ${previousDay.day}`
+
 const stats = [
   {
     label: 'Energy Today',
-    value: '28.4 kWh',
-    detail: '+12% vs yesterday',
+    value: `${latestDay.kwh} kWh`,
+    detail: productionDeltaLabel,
     accent: 'text-emerald-700',
     tone: 'bg-emerald-50',
   },
   {
     label: 'Peak Output',
-    value: '5.8 kW',
-    detail: 'Reached at 1:14 PM',
+    value: `${liveStatus.currentOutputKw} kW`,
+    detail: `Forecast total ${liveStatus.forecastTotalKwh} kWh`,
     accent: 'text-sky-700',
     tone: 'bg-sky-50',
   },
   {
     label: 'System Efficiency',
-    value: '94.6%',
-    detail: 'Within target range',
+    value: `${liveStatus.systemEfficiency}%`,
+    detail: `Weekly average ${liveStatus.weeklyAverageKwh} kWh`,
     accent: 'text-amber-700',
     tone: 'bg-amber-50',
   },
   {
     label: 'CO2 Avoided',
-    value: '41 lbs',
-    detail: 'Equivalent to 0.8 trees',
+    value: `${liveStatus.carbonAvoidedLbs} lbs`,
+    detail: `${(totalProduction / 37.5).toFixed(1)} tree-equivalent days`,
     accent: 'text-violet-700',
     tone: 'bg-violet-50',
   },

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "alert-1",
+    "title": "Inverter temperature elevated",
+    "detail": "Unit 2 is running 5 F above the morning baseline during peak generation.",
+    "time": "8 minutes ago",
+    "severity": "Medium"
+  },
+  {
+    "id": "alert-2",
+    "title": "String B output dip detected",
+    "detail": "Production dropped 12% below expected output, likely due to temporary shading.",
+    "time": "24 minutes ago",
+    "severity": "Low"
+  },
+  {
+    "id": "alert-3",
+    "title": "Scheduled maintenance walkthrough",
+    "detail": "A panel inspection training scenario is queued for tomorrow at 9:00 AM.",
+    "time": "1 hour ago",
+    "severity": "Info"
+  }
+]
