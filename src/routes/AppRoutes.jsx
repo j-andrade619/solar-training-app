@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import ProductionPage from '../pages/ProductionPage'
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/production" element={<ProductionPage />} />
     </Routes>
   )
 }
