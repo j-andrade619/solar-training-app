@@ -1,7 +1,7 @@
 import {
+  Bar,
+  BarChart,
   CartesianGrid,
-  Line,
-  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -10,12 +10,9 @@ import {
 
 function ProductionPreviewChart({ data }) {
   return (
-    <div className="h-56 w-full">
+    <div className="h-64 w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          data={data}
-          margin={{ top: 12, right: 8, left: -20, bottom: 0 }}
-        >
+        <BarChart data={data} margin={{ top: 8, right: 8, left: -16, bottom: 0 }}>
           <CartesianGrid stroke="#e5e7eb" strokeDasharray="3 3" vertical={false} />
           <XAxis
             dataKey="day"
@@ -30,7 +27,7 @@ function ProductionPreviewChart({ data }) {
             width={32}
           />
           <Tooltip
-            cursor={{ stroke: '#86efac', strokeWidth: 1 }}
+            cursor={{ fill: 'rgba(220, 252, 231, 0.6)' }}
             contentStyle={{
               border: '1px solid #dcfce7',
               borderRadius: '16px',
@@ -42,15 +39,13 @@ function ProductionPreviewChart({ data }) {
               return point ? `${label} • ${point.date}` : label
             }}
           />
-          <Line
-            type="monotone"
-            dataKey="kwh"
-            stroke="#15803d"
-            strokeWidth={3}
-            dot={{ r: 4, fill: '#15803d', stroke: '#ffffff', strokeWidth: 2 }}
-            activeDot={{ r: 5 }}
+          <Bar
+            dataKey="productionKwh"
+            fill="#16a34a"
+            radius={[10, 10, 0, 0]}
+            maxBarSize={42}
           />
-        </LineChart>
+        </BarChart>
       </ResponsiveContainer>
     </div>
   )

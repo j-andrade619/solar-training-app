@@ -1,10 +1,16 @@
-import productionData from '../../data/productionData.json'
-import liveStatus from '../../data/liveStatus.json'
+import productionData from '../../data/productionData'
 import ProductionPreviewChart from '../charts/ProductionPreviewChart'
 
 function ProductionPreviewCard() {
-  const totalProduction = productionData.reduce((sum, day) => sum + day.kwh, 0)
-  const averageProduction = totalProduction / productionData.length
+  const weeklyTotal = productionData.reduce(
+    (total, day) => total + day.productionKwh,
+    0,
+  )
+  const bestDay = productionData.reduce((highestDay, currentDay) =>
+    currentDay.productionKwh > highestDay.productionKwh
+      ? currentDay
+      : highestDay,
+  )
 
   return (
     <section className="rounded-2xl bg-white p-6 shadow-sm">
@@ -14,11 +20,11 @@ function ProductionPreviewCard() {
             Production Preview
           </h2>
           <p className="mt-1 text-sm text-gray-600">
-            Seven days of mock training output for the monitored array.
+            Seven days of mock production for the training dashboard.
           </p>
         </div>
         <span className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-          {liveStatus.weather}
+          7-Day View
         </span>
       </div>
 
@@ -26,21 +32,13 @@ function ProductionPreviewCard() {
         <ProductionPreviewChart data={productionData} />
       </div>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-3">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-            Latest Forecast
+            Weekly Total
           </p>
           <p className="mt-1 text-lg font-semibold text-gray-900">
-            {liveStatus.forecastTotalKwh} kWh
-          </p>
-        </div>
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-            Weekly Average
-          </p>
-          <p className="mt-1 text-lg font-semibold text-gray-900">
-            {averageProduction.toFixed(1)} kWh
+            {weeklyTotal.toFixed(1)} kWh
           </p>
         </div>
         <div>
@@ -48,7 +46,7 @@ function ProductionPreviewCard() {
             Best Day
           </p>
           <p className="mt-1 text-lg font-semibold text-gray-900">
-            {liveStatus.bestDayLabel} • {liveStatus.bestDayKwh} kWh
+            {bestDay.day} • {bestDay.productionKwh} kWh
           </p>
         </div>
       </div>
