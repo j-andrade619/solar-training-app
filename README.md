@@ -28,3 +28,5 @@ Vite
 TailwindCSS
 Recharts
 React Router
+
+waht the fuck morther 
