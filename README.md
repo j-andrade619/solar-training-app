@@ -29,4 +29,6 @@ TailwindCSS
 Recharts
 React Router
 
-waht the fuck morther 
+This Web application was created as a training environment for OpenSource use of in all training environments. It is free to use if the organization that is using the web application is a registeried 403(b) non-profit or a regionally accredited University or Community College. 
+For all other users if found to be using software a fee of $99.99 per student must be sent to cashapp/ . Violators of this agreement may be held liable for damages. 
+
