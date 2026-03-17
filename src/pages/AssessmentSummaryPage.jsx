@@ -1,3 +1,5 @@
+import { Link, useNavigate } from 'react-router-dom'
+
 function SummaryCard({ title, items }) {
   return (
     <section className="rounded-2xl bg-white p-6 shadow-sm">
@@ -5,7 +7,7 @@ function SummaryCard({ title, items }) {
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {items.map((item) => (
-          <div key={item.label}>
+          <div key={item.label} className={item.fullWidth ? 'sm:col-span-2' : ''}>
             <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
               {item.label}
             </p>
@@ -18,6 +20,8 @@ function SummaryCard({ title, items }) {
 }
 
 function AssessmentSummaryPage() {
+  const navigate = useNavigate()
+
   const summaryData = {
     assessmentInfo: [
       { label: 'Site Name', value: 'CleanTech Training House' },
@@ -49,21 +53,24 @@ function AssessmentSummaryPage() {
     ],
     photoStatus: [
       { label: 'Photos Captured', value: '5 / 6' },
-      { label: 'Missing Photo', value: 'Utility Meter' },
+      { label: 'Missing Items', value: 'Utility Meter' },
       { label: 'Assessment Status', value: 'Needs Review' },
-      { label: 'Instructor Note', value: 'Capture missing meter photo before final submission.' },
+      {
+        label: 'Instructor Note',
+        value: 'Capture the missing utility meter photo before final submission.',
+        fullWidth: true,
+      },
     ],
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 p-6">
+    <main className="min-h-screen bg-gray-100 px-4 py-6 text-left sm:px-6">
       <div className="mx-auto max-w-6xl space-y-6">
         <section className="rounded-2xl bg-white p-6 shadow-sm">
-          <h1 className="text-3xl font-bold text-gray-900">
-            Assessment Summary
-          </h1>
+          <h1 className="text-3xl font-bold text-gray-900">Assessment Summary</h1>
           <p className="mt-2 text-sm text-gray-600">
-            Review all site details and photo requirements before completing the assessment.
+            Review all site details and photo requirements before completing the
+            assessment.
           </p>
         </section>
 
@@ -75,18 +82,19 @@ function AssessmentSummaryPage() {
 
         <section className="rounded-2xl bg-white p-6 shadow-sm">
           <div className="flex flex-col gap-3 sm:flex-row">
-            <a
-              href="/site-eval/photos"
+            <Link
+              to="/site-eval/photos"
               className="inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
             >
               Back to Photos
-            </a>
+            </Link>
 
             <button
               type="button"
+              onClick={() => navigate('/site-eval')}
               className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
             >
-              Complete Assessment
+              Finish & Start Next Assessment
             </button>
           </div>
         </section>
