@@ -1,11 +1,18 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
-import DashboardHomePage from '../Components/pages/DashboardHomePage'
+import { Route, Routes } from 'react-router-dom'
+
+function HomePage() {
+  return (
+    <main>
+      <h1>Solar Training App</h1>
+      <p>Your router is wired up and ready for the next page components.</p>
+    </main>
+  )
+}
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
-      <Route path="/dashboard" element={<DashboardHomePage />} />
+      <Route path="/" element={<HomePage />} />
     </Routes>
   )
 }
