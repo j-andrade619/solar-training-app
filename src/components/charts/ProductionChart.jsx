@@ -15,7 +15,7 @@ function ProductionChart({ data }) {
         <BarChart data={data} margin={{ top: 8, right: 12, left: -12, bottom: 0 }}>
           <CartesianGrid stroke="#e5e7eb" strokeDasharray="3 3" vertical={false} />
           <XAxis
-            dataKey="day"
+            dataKey="label"
             axisLine={false}
             tickLine={false}
             tick={{ fill: '#6b7280', fontSize: 12 }}
@@ -34,10 +34,6 @@ function ProductionChart({ data }) {
               boxShadow: '0 8px 24px rgba(15, 23, 42, 0.08)',
             }}
             formatter={(value) => [`${value} kWh`, 'Production']}
-            labelFormatter={(label, payload) => {
-              const point = payload?.[0]?.payload
-              return point ? `${label} • ${point.date}` : label
-            }}
           />
           <Bar
             dataKey="productionKwh"

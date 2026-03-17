@@ -1,12 +1,49 @@
 import { useState } from 'react'
 import ProductionChart from '../components/charts/ProductionChart'
 import TimeRangeToggle from '../components/charts/TimeRangeToggle'
-import MetricsGrid from '../components/monitoring/MetricsGrid'
 import ScenarioNotesCard from '../components/monitoring/ScenarioNotesCard'
-import productionData from '../data/productionData'
+import {
+  dailyProductionData,
+  monthlyProductionData,
+  weeklyProductionData,
+} from '../data/productionData'
+
+const productionDataByRange = {
+  Daily: dailyProductionData,
+  Weekly: weeklyProductionData,
+  Monthly: monthlyProductionData,
+}
 
 function ProductionPage() {
   const [selectedRange, setSelectedRange] = useState('Weekly')
+  const productionData = productionDataByRange[selectedRange]
+  const totalProduction = productionData.reduce(
+    (total, item) => total + item.productionKwh,
+    0,
+  )
+  const averageProduction = totalProduction / productionData.length
+  const bestPeriod = productionData.reduce((highestItem, currentItem) =>
+    currentItem.productionKwh > highestItem.productionKwh
+      ? currentItem
+      : highestItem,
+  )
+  const metrics = [
+    {
+      label: 'Total Production',
+      value: `${totalProduction.toFixed(1)} kWh`,
+      detail: `Total output across the selected ${selectedRange.toLowerCase()} range`,
+    },
+    {
+      label: 'Average Production',
+      value: `${averageProduction.toFixed(1)} kWh`,
+      detail: `Average output per period in this ${selectedRange.toLowerCase()} view`,
+    },
+    {
+      label: 'Best Period',
+      value: `${bestPeriod.label} • ${bestPeriod.productionKwh} kWh`,
+      detail: `Highest production point in the ${selectedRange.toLowerCase()} sample`,
+    },
+  ]
 
   return (
     <main className="min-h-screen bg-gray-100 px-4 py-6 text-left sm:px-6">
@@ -48,7 +85,23 @@ function ProductionPage() {
           </div>
         </section>
 
-        <MetricsGrid data={productionData} />
+        <section className="grid gap-4 md:grid-cols-3">
+          {metrics.map((metric) => (
+            <article
+              key={metric.label}
+              className="rounded-2xl bg-white p-6 shadow-sm"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                {metric.label}
+              </p>
+              <p className="mt-3 text-2xl font-semibold text-gray-900">
+                {metric.value}
+              </p>
+              <p className="mt-2 text-sm text-gray-600">{metric.detail}</p>
+            </article>
+          ))}
+        </section>
+
         <ScenarioNotesCard />
       </div>
     </main>
