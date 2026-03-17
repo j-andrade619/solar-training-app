@@ -4,8 +4,10 @@ import SelectField from '../common/SelectField'
 import TextareaField from '../common/TextareaField'
 import ToggleField from '../common/ToggleField'
 import FormSection from './FormSection'
+import { useNavigate } from 'react-router-dom'
 
 function AssessmentForm() {
+  const navigate = useNavigate() 
   const [formData, setFormData] = useState({
     siteName: '',
     assessorName: '',
@@ -51,10 +53,11 @@ function AssessmentForm() {
       >
         <InputField
           id="site-name"
+          name="siteName"
           label="Site Name"
           value={formData.siteName}
           onChange={updateField('siteName')}
-          placeholder="Example: Mesa Training House"
+          placeholder="Example: CleanTech Training House"
         />
         <InputField
           id="assessor-name"
@@ -236,6 +239,7 @@ function AssessmentForm() {
       <div className="rounded-2xl bg-white p-6 shadow-sm">
         <button
           type="button"
+          onClick={() => navigate('/site-eval/photos')}
           className="inline-flex rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
         >
           Continue to Photos

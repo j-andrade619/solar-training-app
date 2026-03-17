@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import AssessmentFormPage from '../pages/AssessmentFormPage'
+import PhotoCapturePage from '../pages/PhotoCapturePage'
 import SiteEvalHomePage from '../pages/SiteEvalHomePage'
 
 function HomePage() {
@@ -17,6 +18,7 @@ function AppRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/site-eval" element={<SiteEvalHomePage />} />
       <Route path="/site-eval/form" element={<AssessmentFormPage />} />
+      <Route path="/site-eval/photos" element={<PhotoCapturePage />} />
     </Routes>
   )
 }
