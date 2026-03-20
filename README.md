@@ -1,34 +1,86 @@
-# React + Vite
+# ☀️ Solar Training App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based training platform that simulates real-world solar installation workflows, including system monitoring and site evaluation.
 
-Currently, two official plugins are available:
+Built for hands-on learning in classroom and workforce development environments.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+👉 https://gentle-otter-056809.netlify.app
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Overview
 
-## Added flare about stack
+This app helps students learn how to:
 
-Solar Training App
+- Monitor solar production data
+- Interpret system performance
+- Conduct a full site evaluation
+- Document real-world installation conditions
 
-A web application for teaching solar installation students
-how to monitor PV systems and perform site evaluations.
+---
 
-Stack:
-React
-Vite
-TailwindCSS
-Recharts
-React Router
+## 🧩 Features
 
-This Web application was created as a training environment for OpenSource use of in all training environments. It is free to use if the organization that is using the web application is a registeried 403(b) non-profit or a regionally accredited University or Community College. 
-For all other users if found to be using software a fee of $99.99 per student must be sent to cashapp/ . Violators of this agreement may be held liable for damages. 
+### 📊 Monitoring Module
+- Dashboard with system status
+- Production data visualization
+- Daily / Weekly / Monthly views
+- Mock alert activity
 
+### 🧾 Site Evaluation Module
+- Guided assessment form
+- Photo capture workflow
+- Final summary review
+- End-to-end training flow
+
+---
+
+## 🔁 Site Evaluation Workflow
+
+```text
+Site Eval Home
+   ↓
+Assessment Form
+   ↓
+Photo Capture
+   ↓
+Assessment Summary
+   ↓
+Return to Site Eval
+
+// ## Tech Stack
+	•	React
+	•	Vite
+	•	Tailwind CSS
+	•	React Router
+	•	Recharts
+	•	Netlify (deployment)
+
+// ## Purpose
+
+This project is designed as a training tool, not a production SaaS platform.
+
+It focuses on:
+	•	usability
+	•	workflow simulation
+	•	real-world job preparation
+
+// ## Future Improvements (V2)
+	•	Persist form and photo data
+	•	Real summary data from user input
+	•	Sample training scenarios
+	•	Instructor review tools
+	•	Exportable reports (PDF)
+
+Author
+
+Built by Jesse Andrade
+
+
+ Status
+
+V1 Complete — Live and deployed
