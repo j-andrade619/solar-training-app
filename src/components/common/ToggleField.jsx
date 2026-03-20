@@ -1,4 +1,4 @@
-function ToggleField({ id, name,label, checked, onChange, required = false, helperText }) {
+function ToggleField({ id, name, label, checked, onChange, required = false, helperText }) {  
   return (
     <div>
       <label
