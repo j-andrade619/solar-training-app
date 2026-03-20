@@ -1,4 +1,4 @@
-# ☀️ Solar Training App
+#  Solar Training App
 
 A web-based training platform that simulates real-world solar installation workflows, including system monitoring and site evaluation.
 
@@ -6,13 +6,13 @@ Built for hands-on learning in classroom and workforce development environments.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-👉 https://gentle-otter-056809.netlify.app
+ https://gentle-otter-056809.netlify.app
 
 ---
 
-## 🧠 Overview
+##  Overview
 
 This app helps students learn how to:
 
@@ -23,15 +23,15 @@ This app helps students learn how to:
 
 ---
 
-## 🧩 Features
+##  Features
 
-### 📊 Monitoring Module
+### Monitoring Module
 - Dashboard with system status
 - Production data visualization
 - Daily / Weekly / Monthly views
 - Mock alert activity
 
-### 🧾 Site Evaluation Module
+###  Site Evaluation Module
 - Guided assessment form
 - Photo capture workflow
 - Final summary review
@@ -39,7 +39,7 @@ This app helps students learn how to:
 
 ---
 
-## 🔁 Site Evaluation Workflow
+##  Site Evaluation Workflow
 
 ```text
 Site Eval Home
